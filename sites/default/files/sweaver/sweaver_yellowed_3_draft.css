@@ -1,0 +1,33 @@
+a img {
+  color: #a39797;
+  background-color: #ffffff;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #f0e7e7;
+  border-right-color: #f0e7e7;
+  border-bottom-color: #f0e7e7;
+  border-left-color: #f0e7e7;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+}
+
+.col-md-12 #site-slogan {
+  font-family: 'Courier New',Courier,Monospace;
+  font-weight: normal;
+  font-size: 25px;
+  color: #a699a6;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-top-color: #c7b3c7;
+  border-right-color: #c7b3c7;
+  border-bottom-color: #c7b3c7;
+  border-left-color: #c7b3c7;
+  font-style: italic;
+  text-decoration: none;
+  text-align: center;
+}
+
