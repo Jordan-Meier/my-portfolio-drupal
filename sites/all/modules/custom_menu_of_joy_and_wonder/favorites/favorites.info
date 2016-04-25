@@ -1,0 +1,5 @@
+name = Favorites
+description = Lists of Cameron's favorite things in different menu items
+package = Epicodus Examples
+core = 7.x
+files[] = favorites.module

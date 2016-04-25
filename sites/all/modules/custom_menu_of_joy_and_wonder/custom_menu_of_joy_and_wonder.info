@@ -1,0 +1,13 @@
+name = custom_menu_of_joy_and_wonder
+description = new modules we made
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = cards
+dependencies[] = favorites
+dependencies[] = greeting
+dependencies[] = groceries
+dependencies[] = pet
+dependencies[] = specials
+features[features_api][] = api:2
+project path = sites/all/modules/custom

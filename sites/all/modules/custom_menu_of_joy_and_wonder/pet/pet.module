@@ -1,0 +1,22 @@
+<?php
+function pet_menu() {
+    $items = array();
+    $items['Bruno'] = array(
+        'title' => "Cameron's Dog Bruno",
+        'page callback' => 'bruno_display',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function bruno_display() {
+    $path = drupal_get_path('module', 'pet') . '/images/bruno2.jpg';
+    return '
+    <p>This is my dog, Bruno. He is a good dog. He looks like:</p>
+    <img src=' . $path . '>
+    <p>To find out more information about Golden Retrievers like Bruno, visit:</p>
+        <a href="https://en.wikipedia.org/wiki/Golden_Retriever">here</a>
+    ';
+    // return '<img src="sites/all/modules/pet/images/bruno2.jpg"/>';
+}

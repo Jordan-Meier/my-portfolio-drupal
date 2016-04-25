@@ -1,0 +1,111 @@
+<?php
+//Okay, so this is a showcase of all the hacky ways to get around not yet knowing how to call classes with Drupal. Scope for days. The Superglobal example below corresponds to favorite movies. The favorite books page is using the array inside of the function.
+$GLOBALS['favorites'] = array();
+$GLOBALS['favorites']['movies'] = array(
+    "Driving Miss Daisy",
+    "Sound of Music",
+    "Kindergarten Cop",
+);
+$GLOBALS['favorites']['books'] = array(
+    "Green Eggs and Ham",
+    "The Holy Bible",
+    "War and Peace",
+);
+$GLOBALS['favorites']['songs'] = array(
+    "On the Edge of Seventeen",
+    "Holy Diver",
+    "Believe",
+);
+
+function favorites_menu() {
+    $favorites = array();
+    $favorites['movies'] = array(
+        "Driving Miss Daisy",
+        "Sound of Music",
+        "Kindergarten Cop",
+    );
+    $favorites['books'] = array(
+        "Green Eggs and Ham",
+        "The Holy Bible",
+        "War and Peace",
+    );
+    $favorites['songs'] = array(
+        "On the Edge of Seventeen",
+        "Holy Diver",
+        "Believe",
+    );
+
+    $items = array();
+    $items['movies'] = array(
+        'title' => "Cameron's Favorite Movies",
+        'page callback' => 'fav_movies_display',
+        'access callback' => TRUE,
+        'type' =>   MENU_NORMAL_ITEM,
+    );
+    $items['books'] = array(
+        'title' => "Cameron's Favorite Books",
+        'page callback' => 'fav_books_display',
+        'access callback' => TRUE,
+        'type' =>   MENU_NORMAL_ITEM,
+    );
+    $items['songs'] = array(
+        'title' => "Cameron's Favorite Songs",
+        'page callback' => 'fav_songs_display',
+        'access callback' => TRUE,
+        'type' =>   MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function fav_movies_display() {
+    $GLOBALS['favorites'] ;
+    $movie_list = null;
+    foreach($GLOBALS['favorites']['movies'] as $movie) {
+        $movie_list .= '
+            <ul>
+                <li>' . $movie . '</li>
+            </ul>
+        ';
+    }
+    return $movie_list;
+}
+
+function fav_books_display() {
+    $favorites = array();
+    $favorites['movies'] = array(
+        "Driving Miss Daisy",
+        "Sound of Music",
+        "Kindergarten Cop",
+    );
+    $favorites['books'] = array(
+        "Green Eggs and Ham",
+        "The Holy Bible",
+        "War and Peace",
+    );
+    $favorites['songs'] = array(
+        "On the Edge of Seventeen",
+        "Holy Diver",
+        "Believe",
+    );
+    $book_list = null;
+    foreach($favorites['books'] as $book) {
+        $book_list .= '
+            <ul>
+                <li>' . $book . '</li>
+            </ul>
+        ';
+    }
+    return $book_list;
+}
+
+function fav_songs_display() {
+    $song_list = null;
+    foreach($GLOBALS['favorites']['songs'] as $song) {
+        $song_list .= '
+            <ul>
+                <li>' . $song . '</li>
+            </ul>
+        ';
+    }
+    return $song_list;
+}

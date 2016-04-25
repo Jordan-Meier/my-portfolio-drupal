@@ -1,0 +1,40 @@
+<?php
+function groceries_menu() {
+    $items = array();
+    $items['groceries'] = array(
+        'title' => "Cameron's grocery list",
+        'page callback' => 'groceries_display',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function groceries_display() {
+    $groceries = array();
+    $groceries['eggs'] = array(
+        'price'=> 1.99,
+        'quantity' => 2,
+    );
+    $groceries['milk'] = array(
+        'price' => 3.99,
+        'quantity' => 4,
+    );
+    $groceries['ice cream'] = array(
+        'price' => 4.49,
+        'quantity' => 3,
+    );
+    $groceries['kale'] = array(
+        'price' => 1.99,
+        'quantity' => 3,
+    );
+
+
+    $grocery_list = null;
+    foreach ($groceries as $grocery_item => $item_info) {
+
+        $grocery_list .= "<h3>" . $grocery_item . "</h3>
+                          <p>Total: " . $item_info['price']*$item_info['quantity'] . "</p>";
+    }
+    return $grocery_list;
+}
