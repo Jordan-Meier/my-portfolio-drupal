@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Coding project feature.
+ */
+
+include_once 'coding_project.features.inc';
