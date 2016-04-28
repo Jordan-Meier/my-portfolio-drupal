@@ -1,0 +1,10 @@
+name = contact
+description = Contact page
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = contact
+dependencies[] = features
+features[contact_categories][] = Contact Me!
+features[features_api][] = api:2
+project path = sites/all/modules/custom
