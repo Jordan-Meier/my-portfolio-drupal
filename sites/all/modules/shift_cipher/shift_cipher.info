@@ -1,0 +1,5 @@
+name = Shift Cipher
+description = Encrypts a block of text by shifting the value of each letter a certain distance either left or right.
+package = Epicodus Code Review
+core = 7.x
+files[] = shift_cipher.module
