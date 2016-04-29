@@ -82,9 +82,15 @@ function shift_cipher_form_submit($form, &$form_state) {
     }
     //somewhere in here, use array_search(). It searches an array for a value and returns the key.
     $result = "";
+    //loop through the phrase
     foreach($split_phrase as $letter) {
+        //find the characters in the phrase which are letters
         if(in_array($letter, $alphabet)) {
+            //find each letter's numeric key for mathing
             $key = array_search($letter, $alphabet);
+            $encrypted_letter = $key + ($shift_direction * $shift_value);
+            
+        //if it is punctuation and not a letter, add it to the result output
         } else {
             $result .= $letter;
             $form_state['redirect'] = 'shift_cipher_results_page';
