@@ -90,6 +90,12 @@ function shift_cipher_form_submit($form, &$form_state) {
             $key = array_search($letter, $alphabet);
             //math equation to encrypt each letter
             $encrypted_letter = $key + ($shift_direction * $shift_value);
+            //if the value of the encrypted letter is outside of the 0-25 range, must cycle back through the alphabet
+            if($encrypted_letter < 0) {
+                $encrypted_letter += 26;
+            } elseif ($encrypted_letter > 25) {
+                $encrypted_letter -= 26;
+            }
             //turn the numeric key back into it's corresponding letter value
             $result .= $alphabet[$encrypted_letter];
         //if it is punctuation and not a letter, add it to the result output
