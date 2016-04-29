@@ -47,11 +47,18 @@ function shift_cipher_form() {
 
 function element_validate_direction($element) {
     $user_direction_input = strtolower($element['#value']);
-    if ($user_direction_input != 'right' || $user_direction_input != 'left') {
+    if (!($user_direction_input == 'right' || $user_direction_input == 'left')) {
         form_error($element, t("Please enter either 'right' or 'left'"));
     }
 }
 
 function element_validate_phrase($element) {
-
+    $user_phrase = strtolower($element['#value']);
+    $split_phrase = str_split($user_phrase);
+    $accepted_chars = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '?', '!', ':', ';');
+    foreach($split_phrase as $character) {
+        if(!in_array($character, $accepted_chars)) {
+            form_error($element, t('No special charcters allowed. Please enter only letters, spaces and punctuation(,.?!:;)'));
+        }
+    }
 }
