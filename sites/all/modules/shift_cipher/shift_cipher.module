@@ -87,10 +87,9 @@ function shift_cipher_form_submit($form, &$form_state) {
             $key = array_search($letter, $alphabet);
         } else {
             $result .= $letter;
+            $form_state['redirect'] = 'shift_cipher_results_page';
         }
     }
-    return $result;
-    $form_state['redirect'] = 'shift_cipher_results_page';
     $_SESSION['results'] = $result;
 }
 
