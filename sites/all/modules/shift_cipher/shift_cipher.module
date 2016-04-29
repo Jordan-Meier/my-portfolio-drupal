@@ -74,7 +74,19 @@ function shift_cipher_form_submit($form, &$form_state) {
     //create an array with the alphabet in order. keys are inherrently numeric.
     $alphabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
 
+    // determine whether or not shift value will be added or subtracted based on direction
+    if($direction == 'left') {
+        $shift_direction = -1;
+    } else {
+        $shift_direction = 1;
+    }
+    //somewhere in here, use array_search(). It searches an array for a value and returns the key.
 
+    foreach($split_phrase as $letter) {
+        if(in_array($letter, $alphabet)) {
+            $key = array_search($letter, $alphabet);
+        }
+    }
     $form_state['redirect'] = 'shift_cipher_results_page';
     $_SESSION['results'] = $result;
 }
