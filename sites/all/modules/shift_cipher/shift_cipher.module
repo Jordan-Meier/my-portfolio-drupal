@@ -64,9 +64,15 @@ function element_validate_phrase($element) {
 }
 
 function shift_cipher_form_submit($form, &$form_state) {
+    //grab values from form
     $shift_value = $form_state['values']['shift_value'];
     $direction = $form_state['values']['direction'];
     $phrase = $form_state['values']['phrase'];
+    //make the phrase lower case and split it into an array
+    $lower_phrase = strtolower($phrase);
+    $split_phrase = str_split($lower_phrase);
+    //create an array with the alphabet in order. keys are inherrently numeric.
+    $alphabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
 
 
     $form_state['redirect'] = 'shift_cipher_results_page';
