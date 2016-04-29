@@ -81,12 +81,20 @@ function shift_cipher_form_submit($form, &$form_state) {
         $shift_direction = 1;
     }
     //somewhere in here, use array_search(). It searches an array for a value and returns the key.
-
+    $result = "";
     foreach($split_phrase as $letter) {
         if(in_array($letter, $alphabet)) {
             $key = array_search($letter, $alphabet);
+        } else {
+            $result .= $letter;
         }
     }
+    return $result;
     $form_state['redirect'] = 'shift_cipher_results_page';
     $_SESSION['results'] = $result;
+}
+
+function shift_cipher_results() {
+    $result = $_SESSION['results'];
+    return "Your encrypted phrase is: $result";
 }
