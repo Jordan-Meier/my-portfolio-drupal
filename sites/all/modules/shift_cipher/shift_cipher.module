@@ -55,10 +55,10 @@ function element_validate_direction($element) {
 function element_validate_phrase($element) {
     $user_phrase = strtolower($element['#value']);
     $split_phrase = str_split($user_phrase);
-    $accepted_chars = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '?', '!', ':', ';');
+    $accepted_chars = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '?', '!', ':', ';', "'");
     foreach($split_phrase as $character) {
         if(!in_array($character, $accepted_chars)) {
-            form_error($element, t('No special charcters allowed. Please enter only letters, spaces and punctuation(,.?!:;)'));
+            form_error($element, t("No special charcters allowed. Please enter only letters, spaces and punctuation(,.?!':;)"));
         }
     }
 }
