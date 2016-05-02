@@ -1,0 +1,25 @@
+<?php
+function extend_mod_follow_networks_alter(&$networks, $uid = 0) {
+    $networks[$uid]['etsy'] = array(
+        'title' => t('Etsy'),
+        'domain' => 'etsy.com',
+    );
+    $networks[$uid]['redbubble'] = array(
+        'title' => t('Redbubble'),
+        'domain' => 'redbubble.com',
+    );
+    $networks[$uid]['github'] = array(
+        'title' => t('Github'),
+        'domain' => 'github.com',
+    );
+
+}
+
+//To get the icons to show up using css injector module:
+
+// a.follow-link-etsy {
+//   background-image: url(/sites/all/modules/extend_mod/icons/icon-etsy.png);
+//
+// }a.follow-link-github {
+//   background-image: url(/sites/all/modules/extend_mod/icons/icon-github.png);
+// }
