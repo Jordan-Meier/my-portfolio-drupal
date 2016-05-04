@@ -21,7 +21,7 @@ function shift_cipher_form() {
         '#title' => 'Shift Value',
         '#type' => 'textfield',
         '#description' => t('Please enter the numeric value by which you would like to shift your letters.'),
-        '#element_validate' => array('element_validate_integer_positive'),
+        '#element_validate' => array('element_validate_integer_positive', 'element_validate_range'),
         '#required' => TRUE,
     );
     $form['direction'] = array(
@@ -45,6 +45,12 @@ function shift_cipher_form() {
     return $form;
 }
 
+function element_validate_range($element) {
+    $user_value_input = $element['#value'];
+    if ($user_value_input > 25 || $user_value_input < 1) {
+        form_error($element, t("Please enter numeric values between 1 and 25"));
+    }
+}
 function element_validate_direction($element) {
     $user_direction_input = strtolower($element['#value']);
     if (!($user_direction_input == 'right' || $user_direction_input == 'left')) {
