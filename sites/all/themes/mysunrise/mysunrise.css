@@ -1,0 +1,11 @@
+#header-banner-wrapper {
+    background-image: url(images/background2.jpeg);
+}
+
+#main-navigation-inside {
+    border: none;
+}
+
+p img {
+    border-radius: 110px;
+}
