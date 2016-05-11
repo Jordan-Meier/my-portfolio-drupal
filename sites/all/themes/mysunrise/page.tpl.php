@@ -8,7 +8,7 @@
 
         <!-- #header-top-inside -->
         <div id="header-top-inside" class="clearfix">
-                <div class="col-md-6">                 
+                <div class="col-md-6">
                     <?php if ($page['header_top_left']) :?>
                     <!-- #header-top-left -->
                     <div id="header-top-left" class="clearfix">
@@ -18,7 +18,7 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="col-md-6">    
+                <div class="col-md-6">
                     <?php if ($page['header_top_right']) :?>
                     <!-- #header-top-right -->
                     <div id="header-top-right" class="clearfix">
@@ -32,7 +32,7 @@
 
     <!--</div>-->
 </div>
-<!-- EOF: #header-top -->    
+<!-- EOF: #header-top -->
 <?php endif; ?>
 
     <!-- header -->
@@ -42,11 +42,11 @@
             <!-- #header-inside -->
             <div id="header-inside" class="clearfix">
                     <div class="col-md-12">
-                    
+
                     <?php if ($logo):?>
                     <div id="logo">
-                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> 
-                            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> 
+                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
+                            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                         </a>
                     </div>
                     <?php endif; ?>
@@ -72,13 +72,13 @@
                 </div>
             <!-- EOF: #header-inside -->
         <!--</div>-->
-        
-    </header>
-    <!-- EOF: #header --> 
 
-    <!-- #main-navigation --> 
+    </header>
+    <!-- EOF: #header -->
+
+    <!-- #main-navigation -->
     <div id="main-navigation" class="clearfix">
-        
+
             <!-- #main-navigation-inside -->
             <div id="main-navigation-inside" class="clearfix">
                         <nav role="navigation">
@@ -93,12 +93,12 @@
             </div>
             <!-- EOF: #main-navigation-inside -->
     </div>
-    <!-- EOF: #main-navigation -->    
-    
+    <!-- EOF: #main-navigation -->
+
     <div id="social2" class="clearfix" >
     <div class="container">
             <div class="row">
-                <div class="col-md-12">                 
+                <div class="col-md-12">
                     <?php if ($page['social']) :?>
                             <?php print render($page['social']); ?>
                     <?php endif; ?>
@@ -106,8 +106,8 @@
                 </div>
         </div>
     </div>
-        
-        
+
+
     </div> <!-- #header-wrapper -->
 
     <?php if ($page['banner']) : ?>
@@ -122,16 +122,16 @@
                     </div>
                 </div>
             </div>
-            <!-- EOF: #banner-inside -->      
+            <!-- EOF: #banner-inside -->
         </div>
     </div>
     <!-- EOF:#banner -->
-    <?php endif; ?>    
-</div> <!-- #header, menu, slogan and banner wrapper --> 
+    <?php endif; ?>
+</div> <!-- #header, menu, slogan and banner wrapper -->
 
 <!-- #page -->
 <div id="page" class="clearfix">
-    
+
     <?php if ($page['highlighted']):?>
     <!-- #top-content -->
     <div id="top-content" class="clearfix">
@@ -151,7 +151,7 @@
     </div>
     <!-- EOF: #top-content -->
     <?php endif; ?>
-    
+
     <?php if ($page['promoted']):?>
     <!-- #promoted -->
     <div id="promoted" class="clearfix">
@@ -170,7 +170,7 @@
     <!-- #main-content -->
     <div id="main-content">
         <div class="container">
-        
+
             <!-- #messages-console -->
             <?php if ($messages):?>
             <div id="messages-console" class="clearfix">
@@ -182,11 +182,11 @@
             </div>
             <?php endif; ?>
             <!-- EOF: #messages-console -->
-            
+
             <div class="row">
 
                 <?php if ($page['sidebar_first']):?>
-                <aside class="<?php print $sidebar_grid_class; ?>">  
+                <aside class="<?php print $sidebar_grid_class; ?>">
                     <!--#sidebar-first-->
                     <section id="sidebar-first" class="sidebar clearfix">
                     <?php print render($page['sidebar_first']); ?>
@@ -205,12 +205,12 @@
                         <div id="content-wrapper">
                             <?php print render($title_prefix); ?>
                             <?php if ($title):?>
-                            <h1 class="page-title"><?php print $title; ?></h1>
+                            
                             <?php endif; ?>
                             <?php print render($title_suffix); ?>
 
                             <?php print render($page['help']); ?>
-                      
+
                             <!-- #tabs -->
                             <?php if ($tabs):?>
                                 <div class="tabs">
@@ -246,7 +246,7 @@
                     <!--EOF:#sidebar-second-->
                 </aside>
                 <?php endif; ?>
-        
+
             </div>
 
         </div>
@@ -257,7 +257,7 @@
 <!-- EOF:#page -->
 
 
-    
+
 <?php if ($page['google_map_region']):?>
 <!-- #google_map_region -->
 <div id="google_map_region" class="clearfix">
@@ -275,7 +275,7 @@
 <!-- #footer -->
 <footer id="footer" class="clearfix">
     <div class="container">
-    
+
         <!-- #footer-inside -->
         <div id="footer-inside" class="clearfix">
             <div class="row">
@@ -286,7 +286,7 @@
                     </div>
                     <?php endif; ?>
                 </div>
-                
+
                 <div class="col-md-3">
                     <?php if ($page['footer_second']):?>
                     <div class="footer-area">
@@ -313,21 +313,21 @@
             </div>
         </div>
         <!-- EOF: #footer-inside -->
-    
+
     </div>
-</footer> 
+</footer>
 <!-- EOF #footer -->
 <?php endif; ?>
 
 <footer id="subfooter" class="clearfix">
     <div class="container">
-        
+
         <!-- #subfooter-inside -->
         <div id="subfooter-inside" class="clearfix">
             <div class="row">
                 <div class="col-md-12">
                     <!-- #subfooter-left -->
-                    <div class="subfooter-area">                  
+                    <div class="subfooter-area">
                     <?php if ($page['footer']):?>
                     <?php print render($page['footer']); ?>
                     <?php endif; ?>
@@ -337,7 +337,7 @@
             </div>
         </div>
         <!-- EOF: #subfooter-inside -->
-    
+
     </div>
 </footer>
 <!-- EOF:#subfooter -->
