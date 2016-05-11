@@ -16,3 +16,8 @@ p img {
     height: auto;
     vertical-align: middle;
 }
+
+
+#main-content {
+    /*display: none;*/
+}
