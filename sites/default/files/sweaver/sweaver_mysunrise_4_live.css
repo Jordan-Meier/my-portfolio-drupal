@@ -19,5 +19,8 @@ p img {
 
 #page #main-content {
   padding-top: 18px;
+  background-image: url(/sites/default/files/sweaver/sweaver_image_15.jpg);
+  background-position: 50% 50%;
+  background-attachment: fixed;
 }
 
